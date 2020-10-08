@@ -1,0 +1,48 @@
+html>
+<head>
+<script language = "JavaScript">
+
+var number = 0;
+var picList = [ "images/slide1.jpg", "images/slide2.jpg", "images/slide3.png", "images/slide4.png", "images/slide5.jpg", "images/slide6.png", "images/slide7.png", "images/slide8.png"];
+var clipList = ["sounds/drejohnson.mp3", "sounds/bowjohnson.mp3", "sounds/zoeyjohnson.mp3","sounds/dianejohnson.mp3", "sounds/juniorjohnson.mp3", "sounds/jackjohnson.mp3", "sounds/rubyjohnson.mp3", "sounds/earljohnson.mp3"];
+
+    
+
+function startShow()
+{
+    
+   var pic = document.getElementById("picFrame"); 
+   var clip = document.getElementById("myAudio");
+    
+    pic.src = picList [number]
+    clip.src = clipList[number];
+    clip.play(); 
+   
+    number = number +1; // add one to number var
+    if (number > 7 )
+    
+        number=0;
+    
+}    
+
+
+</script>
+
+</head>
+<body>
+<center> 
+<h1> Slide Show </h1>
+
+<img id="picFrame" src= "images/slide0.jpg"/>
+    <audio id= "myAudio"> </audio> 
+    
+    
+<br/>
+<br/>
+
+<input type="button" value="Click Me" onClick="startShow()">
+
+</center>
+</body>
+</html>
+
