@@ -1,0 +1,143 @@
+<html>
+<head>
+<script language="javaScript">
+var number = 0;
+var autoClicked = false;
+function addOne()
+{
+    // Write code that increments the number var by one. And alert it
+	number = number + 1; // number++ also increments a variable by 1.
+    
+    // Test if number equal 16 and if so reset to 0
+    if (number == 16)
+    {
+        number = 0;
+    }
+    
+    flipLEDs();
+    
+    // Replace alert and display the number variable in the text box on this page.
+    
+    if (autoClicked == true)
+    {
+     var timer = setTimeout ("addOne ()", 1000 );   
+    }
+    
+    document.getElementById("count").value = number
+}
+
+    function auto()
+{
+  if( autoClicked == false ) // true when autoClicked is false
+   {
+   autoClicked = true;
+   document.getElementById("runStop").value = "Pause";
+   addOne();
+   }
+  else
+   {
+   autoClicked = false
+   document.getElementById("runStop").value = "Run";
+ }
+
+}
+
+function onesPlace()
+{
+    if (number % 2 == 1)//number is odd
+      {
+        document.getElementById("ones").src = "images/ledON.png";
+      }
+      else
+      {
+       document.getElementById("ones").src = "images/ledOFF.png";
+      }
+    
+}    
+    
+ function twosPlace()
+{ 
+    if (number % 4 < 2) //number divded by 2, and the remainder is 1
+    {
+        document.getElementById("twos").src = "images/ledOFF.png";
+    }
+    else
+    {
+        document.getElementById("twos").src = "images/ledON.png";
+    }
+
+}
+
+function foursPlace()
+{
+    if ( number % 8 < 4) //number divided by 8 the remainder is less 4 than the led is OFF
+    {
+       document.getElementById("fours").src = "images/ledOFF.png";
+    }
+    else //when the remainder is 4 or more
+    {  
+       document.getElementById("fours").src = "images/ledON.png";
+    }      
+    
+}
+
+function eightsPlace()
+{
+    if (number % 16 < 8) //number divided by 16 the remainder is less than 8 than the led is OFF
+    {
+        document.getElementById("eights").src = "images/ledOFF.png";
+    }
+    else //when the remainder is 8 or more
+    {
+        document.getElementById("eights").src = "images/ledON.png";
+    }
+
+}    
+    
+    
+ function flipLEDs()
+    {
+     onesPlace();
+     twosPlace();
+     foursPlace();
+     eightsPlace();    
+    }
+    
+    
+</script>
+<head>
+<body>
+<center>
+<h1> Binary Counter </h1>
+    Click here to <a href="index.html">return to my home page. </a><br/>
+<input type = "button" value = "Add One" onclick="addOne()"/>
+<input id="runStop" type = "button" value = "Run" onclick="auto()"/><br/><br/>
+<input id="count" type = "text" size ="20" style="text-align:center">
+
+
+<div id="first" style="position:absolute; top:150; left: 600">
+2^0<br/>
+<img id="ones" src="images/ledOFF.png" width="50"/>
+</div>
+
+<div id="second" style="position:absolute; top:150; left: 500">
+2^1<br/>
+<img id="twos" src="images/ledOFF.png" width="50"/>
+</div>
+
+<div id="third" style="position:absolute; top:150; left: 400">
+2^2<br/>
+<img id="fours" src="images/ledOFF.png" width="50"/>
+</div>
+
+
+<div id="fourth" style="position:absolute; top:150; left: 300">
+2^3<br/>
+<img id="eights" src="images/ledOFF.png" width="50"/>
+</div>
+
+
+
+</center>
+</body>
+</html>
