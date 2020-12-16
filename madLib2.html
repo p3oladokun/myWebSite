@@ -2,7 +2,7 @@
 <head> 
 <script language="JavaScript">
 
-var partsOfSpeech = ["Please enter a name", "Please enter a type of vehicle", "word3", "word4", "word5", "word6"];
+var partsOfSpeech = ["Please enter a name", "Please enter a type of vehicle", "please type in an adjective", "please type a verb", "please enter a type of animal", "add a amount of money"];
 var answers = new Array(partsOfSpeech.length);
 var story = [" phrase1", "phrase2", "phrase3", "phrase4", "phrase5", "phrase6", "phrase7" ];
 var count = 0;
@@ -40,7 +40,8 @@ function getWords()
 
 function displayStory()
 {
-	var answer = "djfhdvj";
+	var box = document.createElement("story");
+    box.type = "text";
 	var i;
 	
 	// loop to stitch elements of story with elements of answers. 
@@ -75,5 +76,7 @@ function displayStory()
 A girl named Sam was walking her dog in the park. Sam came across a store selling her dream moped. All she ever wanted to buy a moped so she could get to all the places she wanted to go. Sam had to figure out a way to get that moped. She asked all her friends to help her come up with 300$ so she could buy that moped. Sam started doing a lot of odd jobs so she could get the moped. Her friends pitched in as well. A few weeks later she was finally able to make up all the money to buy that moped.
 <div>
 
+    Click here to <a href="index.html">return to my homepage. </a>
 </body>
 </html>
+   
