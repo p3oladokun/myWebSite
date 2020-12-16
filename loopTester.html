@@ -1,0 +1,65 @@
+<html>
+<head>
+<script language="JavaScript">
+
+// make an array of 8 favorite foods
+var favFoods = ["pasta", "donuts", "salad", "sushi", "chicken", "ice cream", "avocado", "strawberries"];
+var counter = 0;
+
+function start()
+{
+    var tbox = document.getElementById("display");
+    
+    
+    // display the first element of favFoods in the textbox
+    tbox.value = favFoods [counter];
+    //increase counter by 1
+    
+    counter++;// adds one to counter
+/*    
+    // write an if statment to call setTimeout only when counter is valid index of favFoods
+    
+   if (counter < favFoods.length) // condition when true
+    {
+   var timer = setTimeout("start()", 1000);
+    }
+    else // in all other cases
+    {
+    alert("hi");
+    }
+*/
+    // Use while loops to loop for an indefinite number of times
+    while( counter < favFoods.length ) // loop while the condition is true
+    {
+     alert(favFoods[counter]);
+     counter++;
+    }
+    // for loop is used when the number of times thru the loop is set / determinate.
+    for (var i = 0; i < favFoods.length ; i++)
+    {
+     alert(favFoods[i]);    
+    }
+  
+    
+    
+    
+    
+    
+    
+   
+    
+    
+    
+}
+
+</script>
+</head>
+<body>
+<center>
+<h1>Loop Test</h1>
+<input type="button" value="Click me" onClick="start()"/>
+<br/><br/>
+<input id="display" type="text" size="75"/>
+
+<body>
+</html>
