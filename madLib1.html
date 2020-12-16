@@ -2,7 +2,7 @@
 <head> 
 <script language="JavaScript">
 
-var partsOfSpeech = ["word1 ","word2 ","word3 ","word4 ","word5 ","word6 ","word7 ","word8 "];
+var partsOfSpeech = ["Please enter a name", "Please enter a type of vehicle", "please type in an adjective", "please type a verb", "please enter a type of animal", "add a amount of money"];
 var answers; 
 var story = ["phrase1 ","phrase2 ","phrase3 ","phrase4 ","phrase5 ","phrase6 ","phrase7 ","phrase8 ", "phrase9 "];
 var count = 0;
@@ -26,9 +26,26 @@ function displayStory()
 	// traverse both lists until all elements of each list are in answer. 
 	// Alert answer when finished.
     
-    answer = answer + partsOfSpeech[i];
-    answer = answer + story[i];
-   
+  answer = answer + story[0];
+answer = answer + partsOfSpeech[0];
+answer = answer + story[1];
+answer = answer + partsOfSpeech[1];
+answer = answer + story[2];
+answer = answer + partsOfSpeech[2]
+answer = answer + story[3];
+answer = answer + partsOfSpeech[3];
+answer = answer + story[4];
+answer = answer + partsOfSpeech[4];
+answer = answer + story[5];
+answer = answer + partsOfSpeech[5];
+    answer = answer + story[6];
+answer = answer + partsOfSpeech[6];
+answer = answer + story[7];
+answer = answer + story[8];
+answer = answer + story[9];
+
+
+
     
     if ( i < story.length);
         // add last element of story array
@@ -58,3 +75,4 @@ My story goes here. <div>
 
 </body>
 </html>
+  Click here to <a href="index.html">return to my homepage. </a>
