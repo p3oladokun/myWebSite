@@ -1,0 +1,107 @@
+<html> 
+<head> 
+<script language="JavaScript">
+/*************** Algorithm ******************
+1.
+2.
+3.
+4.
+5. 
+6.
+7.
+8 
+
+*/
+
+
+var group = ["-- Choose a President --", "Obama", "Biden", "Reagan", "Clinton", "Bush", "Nixon", "Eisenhower"];
+// Add at least 8 fun facts corresponding to the group array 
+var facts = ["-- No president selected --", "His first name means one who is blessed in Swahili", "Was a football star in high school and was bullied for having a stutter", "He really loved jelly beans", "In high school, he played the saxophone in a trio called the Three Blind Mice"];
+
+function loadData()
+{
+    
+	var sum = 0;
+	for(var i = 0; i<group.length; i++)
+    {
+        
+        var daList = document.getElementById("prez");
+  		var option = document.createElement("option");
+  		option.text = group[i];
+  		daList.add(option);
+    }
+}
+
+// This function identifies which element from the drop down has been selected. It calls the 
+// getIndex function to acquire what the index of the selected item. Then it displays the 
+// corresponding element in the facts list. (This is diplayed in the textbox on the web page.)
+function start() 
+{
+   
+    // write code that will store the selection object("prez") in a variable
+    //called selection
+    
+    var selection = document.getElementById("prez");
+    
+    //write code that will store the index of the user's selection in a variable 
+    // called the daIndex
+    var daIndex = getIndex(selection.value); 
+    
+    // write an if statment that test if daIndex is -1. If so ,
+    alert(daIndex); 
+   // alert(selection.value);
+    //alert(getIndex("c"));
+ 
+    // write code that displays the correspondng element of facts in the "funFact"
+    //text box
+    document.getElementById("funFact").value = facts[daIndex]
+    
+}
+
+// This function searches the group array for the element passed as a parameter
+// and returns the index number for that element in the array.
+function getIndex(d) // var d = "c" 
+{
+    var answer = -1; // invalid index value
+
+    // write a loop that transverses the entire group array once
+    for(var i = 0; i < group.length; i++)
+    {
+        // write an if statment that tests if the element at i equals 
+        // the parameter passed in the getIndex function
+        
+        if(group[i] == d) // d is found at index i
+        {
+          answer = i;
+        }
+        
+        
+    }
+    return answer;   
+}
+
+
+
+</script>
+</head>
+<body onload="loadData()"> 
+<center>
+<font color="E59914"size ="5">
+    <h1>Presidential Fun Facts</h1>
+    Click here to <a href="index.html">return to my home page. </a><br/>
+        
+<br/><br/>
+<table border = 3>
+	<tr>
+		<td>  	<select name="p1" id="prez"></select>	</td>
+		<td>	<input id="funFact" type="text" size="40"/> </td>
+	</tr>
+</table>
+<br/><br/>
+<input type="button" value="click" onclick="start()"/>
+</center>
+</head>
+<body background="images/funFactsbkgnd.jpg">
+
+</body>
+</html>
